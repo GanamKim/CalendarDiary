@@ -1,0 +1,58 @@
+package memo.first.version;
+
+import java.awt.BorderLayout;
+
+import java.awt.Container;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+
+
+public class EditFrame extends JFrame {
+	
+	
+	   private String title;     
+	   private EditModel buffer;   
+	   private static int count = 0;  
+
+	   public EditFrame(String my_title) { 
+	      title = my_title;
+	      count++;   
+	      if (count > 10)
+	         count = 0;
+
+	      setLocation(50 + count * 30, 50 + count * 30);  
+
+	      buffer = new EditModel(title, 15, 30);
+	      Container cp = getContentPane();
+	       cp.setLayout(new BorderLayout());
+	       
+	      JMenuBar mbar = new JMenuBar();
+	       JMenu file = new JMenu("File");     
+	      file.add(new ClearMenuItem("New", buffer));
+	      file.add(new SaveMenuItem("Save", buffer));
+	      file.addSeparator();   
+	      file.add(new QuitMenuItem("Exit", this));
+	      mbar.add(file);    
+	      JMenu edit = new JMenu("Edit");     
+	      edit.add(new CutMenuItem("Cut", buffer));
+	      edit.add(new CopyMenuItem("Copy", buffer));
+	      edit.add(new PasteMenuItem("Paste", buffer));
+	      
+	      mbar.add(edit);
+	      setJMenuBar(mbar);  
+	      JScrollPane sp = new JScrollPane(buffer);  
+	      cp.add(sp, BorderLayout.CENTER);
+	      setTitle("Memo - " + title);
+	      pack();
+	      setVisible(true);
+	   }
+
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
