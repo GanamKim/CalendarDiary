@@ -1,0 +1,59 @@
+package calendar.menuitem.Listener;
+
+import java.awt.Component;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+
+import noticeboard.first.version.BoardFrame;
+
+public class FrameChangeable implements MouseListener{
+
+	private JFrame nowFrame;
+	private JFrame showFrame;
+		
+	public FrameChangeable(JFrame nowFrame, JFrame showFrame) {
+		super();
+		this.nowFrame=nowFrame;
+		this.showFrame=showFrame;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		nowFrame.setVisible(false);
+		showFrame.setVisible(true);
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	
+	
+}
