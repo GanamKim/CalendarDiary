@@ -1,0 +1,5 @@
+package calendar.second.version;
+
+public interface UpdateableView {
+	public void update();
+}
