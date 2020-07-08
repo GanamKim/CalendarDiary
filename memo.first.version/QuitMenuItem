@@ -1,0 +1,22 @@
+package memo.first.version;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JMenuItem;
+
+
+public class QuitMenuItem extends JMenuItem implements ActionListener{
+	   private EditFrame frame;
+	   public QuitMenuItem(String label, EditFrame frame){ 
+	      super(label);
+	      this.frame = frame;
+	      addActionListener(this);
+	   }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		frame.dispose();
+	}
+}
