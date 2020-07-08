@@ -1,0 +1,17 @@
+package memo.first.version;
+
+import java.awt.event.ActionEvent;
+
+
+public class SaveMenuItem extends EditorMenuItem{
+
+	public SaveMenuItem(String label, EditModel model){ 
+		super(label, model); 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		myModel().save();
+	}
+}
